@@ -1,9 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using static UnityEditor.PlayerSettings;
 
 public class SpawnerMonedas : MonoBehaviour
 {
+    float x;
+    float y;
+    Vector2 pos;
     [Header("Coin Attributes")]
     public GameObject coin;
     public float lifeTime = 1f;
@@ -16,7 +20,10 @@ public class SpawnerMonedas : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        x = Random.Range(-25, 26);
+        y = Random.Range(-25, 26);
+        pos = new Vector3(x, y);
+        transform.position = pos;
     }
 
     // Update is called once per frame
