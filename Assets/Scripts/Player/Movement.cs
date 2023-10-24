@@ -17,15 +17,17 @@ public class Movement : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Movimiento();
+        Move();
     }
 
-    private void Movimiento()
+    public void Move()
     {
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        transform.position += new Vector3(moveX, moveY, 0) * Time.deltaTime * speed;
+        Vector3 mov = new Vector3 (moveX, moveY, 0);
+
+        transform.position += mov * Time.deltaTime * speed;
 
     }
 }
