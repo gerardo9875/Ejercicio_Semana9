@@ -7,6 +7,9 @@ public class Movement : MonoBehaviour
 
     [SerializeField] float speed;
     public Rigidbody2D rb2d;
+    [SerializeField] private Transform shootcontroller;
+    [SerializeField] private GameObject bullet;
+
 
     // Start is called before the first frame update
     void Awake()
@@ -25,9 +28,15 @@ public class Movement : MonoBehaviour
         float moveX = Input.GetAxisRaw("Horizontal");
         float moveY = Input.GetAxisRaw("Vertical");
 
-        Vector3 mov = new Vector3 (moveX, moveY, 0);
+        //Vector3 mov = new Vector3 (moveX, moveY, 0);
 
-        transform.position += mov * Time.deltaTime * speed;
+        //transform.position += mov * Time.deltaTime * speed;
 
+        rb2d.velocity = new Vector2 (moveX * speed, moveY * speed);
+
+        
+        
     }
+
+    
 }

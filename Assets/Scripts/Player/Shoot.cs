@@ -18,7 +18,7 @@ public class Shoot : MonoBehaviour
 
     private void Shooting()
     {
-        Instantiate(bullet);
+        Instantiate(bullet,shootcontroller.position,shootcontroller.rotation);
     }
 
 }
